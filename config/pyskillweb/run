@@ -1,0 +1,9 @@
+#!/bin/sh
+set -e
+
+DEPLOY=${DEPLOY}
+SOURCE=${SOURCE}
+
+cd $SOURCE/pyskillweb
+nohup python -u pyskillweb.py 2>&1 > pyskillweb.log &
+echo $! > $DEPLOY/profiles/pyskillweb/pyskillweb.pid
