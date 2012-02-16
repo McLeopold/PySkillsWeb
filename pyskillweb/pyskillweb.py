@@ -18,7 +18,7 @@ while True:
         continue
 
     if req.headers.get("killme", None):
-        print "They want to be killed."
+        print("They want to be killed.")
         response = ""
     else:
         response = "<pre>\nSENDER: {0}\nIDENT:{1}\nPATH: {2}\nHEADERS:{3}\nBODY:{4}</pre>".format(

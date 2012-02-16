@@ -5,5 +5,5 @@ DEPLOY=${DEPLOY}
 SOURCE=${SOURCE}
 
 cd $SOURCE/pyskillweb
-nohup python -u pyskillweb.py 2>&1 > pyskillweb.log &
+nohup python2 -u pyskillweb.py 2>&1 > $DEPLOY/logs/pyskillweb.log &
 echo $! > $DEPLOY/profiles/pyskillweb/pyskillweb.pid
