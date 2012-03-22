@@ -55,6 +55,12 @@ sudo chown root:root $DEPLOY/profiles/mongrel2
 
 echo "creating procer script"
 cp $SOURCE/config/go $DEPLOY
+cat $SOURCE/config/update | sed -e "s/\${DEPLOY}/$SED_DEPLOY/g" \
+                                -e "s/\${SOURCE}/$SED_SOURCE/g" > $DEPLOY/update
+chmod u+x $DEPLOY/update
+
+echo "copying static files"
+$DEPLOY/update
 
 echo
 tree $DEPLOY
